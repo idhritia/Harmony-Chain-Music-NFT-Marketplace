@@ -59,5 +59,5 @@ Pull requests are welcome! Feel free to open an issue or suggest improvements.
 This project is licensed under the MIT License.
 
 ---
-🔗 **GitHub Repo**: [Harmony Chain](https://github.com/yourusername/HarmonyChain)
+🔗 **GitHub Repo**: [Harmony Chain](https://github.com/idhritia/Harmony-Chain-Music-NFT-Marketplace)
 
