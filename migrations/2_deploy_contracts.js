@@ -1,11 +1,16 @@
 const MusicNFT = artifacts.require("MusicNFT");
-const MusicMarketplace = artifacts.require("MusicMarketplace");
+const RoyaltyManager = artifacts.require("RoyaltyManager");
+const Marketplace = artifacts.require("Marketplace");
 
 module.exports = async function(deployer) {
-  // Deploy MusicNFT contract
+  // Deploy MusicNFT
   await deployer.deploy(MusicNFT);
   const musicNFT = await MusicNFT.deployed();
   
-  // Deploy MusicMarketplace contract with MusicNFT address
-  await deployer.deploy(MusicMarketplace, musicNFT.address);
+  // Deploy RoyaltyManager with MusicNFT address
+  await deployer.deploy(RoyaltyManager, musicNFT.address);
+  const royaltyManager = await RoyaltyManager.deployed();
+  
+  // Deploy Marketplace with MusicNFT and RoyaltyManager addresses
+  await deployer.deploy(Marketplace, musicNFT.address, royaltyManager.address);
 };
